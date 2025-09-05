@@ -1,31 +1,20 @@
-package Level1;
 /*
-Write a program FizzBuzz, take a number as user input and if it is a positive integer loop from 0 to the number and save the number, but for multiples of 3 save "Fizz" instead of the number, for multiples of 5 save "Buzz", and for multiples of both save "FizzBuzz". Finally, print the array results for each index position in the format Position 1 = 1, …, Position 3 = Fizz,...
-Hint:
-Create a String Array to save the results and
-Finally, loop again to show the results of the array based on the index position
+Write a program to print numbers from 1 to 50. For multiples of 3, print "Fizz" instead of the number, for multiples of 5 print "Buzz", and for numbers which are multiples of both 3 and 5 print "FizzBuzz". Store the results in a String array and display the array.
+Hint => 
+Create a String array of size 50. Use a for loop from 1 to 50, apply the FizzBuzz logic, and store the result in the array. Display the array.
 */
-import java.util.Scanner;
 public class FizzBuzzArray {
     public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
-        System.out.print("Enter a positive integer: ");
-        int n = sc.nextInt();
-        if (n <= 0) {
-            System.out.println("Not a positive integer");
-            sc.close();
-            return;
+        String[] arr = new String[50];
+        for (int i = 1; i <= 50; i++) {
+            if (i % 15 == 0) arr[i-1] = "FizzBuzz";
+            else if (i % 3 == 0) arr[i-1] = "Fizz";
+            else if (i % 5 == 0) arr[i-1] = "Buzz";
+            else arr[i-1] = Integer.toString(i);
         }
-        String[] results = new String[n];
-        for (int i = 1; i <= n; i++) {
-            if (i % 3 == 0 && i % 5 == 0) results[i-1] = "FizzBuzz";
-            else if (i % 3 == 0) results[i-1] = "Fizz";
-            else if (i % 5 == 0) results[i-1] = "Buzz";
-            else results[i-1] = String.valueOf(i);
+        for (String s : arr) {
+            System.out.print(s + " ");
         }
-        for (int i = 0; i < n; i++) {
-            System.out.println("Position " + (i+1) + " = " + results[i]);
-        }
-        sc.close();
+        System.out.println();
     }
 }

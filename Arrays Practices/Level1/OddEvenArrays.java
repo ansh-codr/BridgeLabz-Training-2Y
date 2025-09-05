@@ -1,35 +1,25 @@
-package Level1;
 /*
-Create a program to save odd and even numbers into odd and even arrays between 1 to the number entered by the user. Finally, print the odd and even numbers array
-Hint:
-Get an integer input from the user, assign it to a variable number, and check for Natural Number. If not a natural number then print an error and exit the program
-Create an integer array for even and odd numbers with size = number / 2 + 1
-Create index variables for odd and even numbers and initialize them to zero
-Using a for loop, iterate from 1 to the number, and in each iteration of the loop, save the odd or even number into the corresponding array
-Finally, print the odd and even numbers array using the odd and even index
+Write a program to store 10 numbers in an array and display all odd and even numbers separately.
+Hint => 
+Create an integer array of size 10 and get user input to store in the array.
+Use a for loop to display all even numbers and another for loop to display all odd numbers.
 */
-import java.util.Scanner;
 public class OddEvenArrays {
     public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
-        System.out.print("Enter a natural number: ");
-        int number = sc.nextInt();
-        if (number <= 0) {
-            System.out.println("Not a natural number");
-            sc.close();
-            return;
+        java.util.Scanner sc = new java.util.Scanner(System.in);
+        int[] arr = new int[10];
+        for (int i = 0; i < arr.length; i++) {
+            System.out.print("Enter number " + (i+1) + ": ");
+            arr[i] = sc.nextInt();
         }
-        int[] odd = new int[number / 2 + 1];
-        int[] even = new int[number / 2 + 1];
-        int oddIndex = 0, evenIndex = 0;
-        for (int i = 1; i <= number; i++) {
-            if (i % 2 == 0) even[evenIndex++] = i;
-            else odd[oddIndex++] = i;
+        System.out.print("Even numbers: ");
+        for (int num : arr) {
+            if (num % 2 == 0) System.out.print(num + " ");
         }
-        System.out.print("Odd numbers: ");
-        for (int i = 0; i < oddIndex; i++) System.out.print(odd[i] + " ");
-        System.out.print("\nEven numbers: ");
-        for (int i = 0; i < evenIndex; i++) System.out.print(even[i] + " ");
+        System.out.print("\nOdd numbers: ");
+        for (int num : arr) {
+            if (num % 2 != 0) System.out.print(num + " ");
+        }
         System.out.println();
         sc.close();
     }
