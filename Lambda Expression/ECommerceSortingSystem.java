@@ -1,76 +1,80 @@
-import java.util.*;
-import java.util.stream.Collectors;
+import java.util.*;import java.util.*;import java.util.*;
 
-/**
- * E-Commerce Custom Sorting System using Lambda Expressions with Comparator
- * Demonstrates different sorting strategies based on sales campaigns
- */
+
+
 public class ECommerceSortingSystem {
-    private List<Product> products;
-    
-    public ECommerceSortingSystem() {
-        this.products = new ArrayList<>();
-        initializeProducts();
-    }
-    
-    private void initializeProducts() {
-        // Sample products for demonstration
-        products.add(new Product("Smartphone", 799.99, 4.5, 15.0, "Electronics", 150));
-        products.add(new Product("Laptop", 1299.99, 4.8, 20.0, "Electronics", 89));
-        products.add(new Product("Headphones", 199.99, 4.2, 25.0, "Electronics", 200));
-        products.add(new Product("Smart Watch", 349.99, 4.6, 10.0, "Electronics", 120));
-        products.add(new Product("Tablet", 499.99, 4.3, 18.0, "Electronics", 95));
-        products.add(new Product("Bluetooth Speaker", 79.99, 4.1, 30.0, "Electronics", 300));
-        products.add(new Product("Wireless Mouse", 29.99, 4.0, 5.0, "Electronics", 450));
-        products.add(new Product("Keyboard", 59.99, 4.4, 12.0, "Electronics", 180));
-        products.add(new Product("Monitor", 299.99, 4.7, 22.0, "Electronics", 75));
-        products.add(new Product("Webcam", 89.99, 3.9, 35.0, "Electronics", 220));
-    }
-    
-    // Sort by price - ascending
-    public void sortByPriceAscending() {
-        System.out.println("\n🔹 SORTING BY PRICE (Low to High) 🔹");
-        List<Product> sorted = products.stream()
-                .sorted((p1, p2) -> Double.compare(p1.getPrice(), p2.getPrice()))
-                .collect(Collectors.toList());
-        displayProducts(sorted);
-    }
-    
-    // Sort by price - descending
-    public void sortByPriceDescending() {
-        System.out.println("\n🔹 SORTING BY PRICE (High to Low) 🔹");
-        List<Product> sorted = products.stream()
-                .sorted((p1, p2) -> Double.compare(p2.getPrice(), p1.getPrice()))
-                .collect(Collectors.toList());
-        displayProducts(sorted);
-    }
-    
-    // Sort by discounted price using lambda
-    public void sortByDiscountedPrice() {
-        System.out.println("\n🔹 SORTING BY DISCOUNTED PRICE (Low to High) 🔹");
-        List<Product> sorted = products.stream()
-                .sorted((p1, p2) -> Double.compare(p1.getDiscountedPrice(), p2.getDiscountedPrice()))
-                .collect(Collectors.toList());
-        displayProducts(sorted);
-    }
-    
-    // Sort by rating - highest first
-    public void sortByRating() {
-        System.out.println("\n⭐ SORTING BY RATING (Highest First) ⭐");
-        List<Product> sorted = products.stream()
-                .sorted((p1, p2) -> Double.compare(p2.getRating(), p1.getRating()))
-                .collect(Collectors.toList());
-        displayProducts(sorted);
-    }
-    
-    // Sort by discount percentage - highest first
-    public void sortByDiscount() {
-        System.out.println("\n🏷️ SORTING BY DISCOUNT (Highest First) 🏷️");
-        List<Product> sorted = products.stream()
-                .sorted((p1, p2) -> Double.compare(p2.getDiscount(), p1.getDiscount()))
-                .collect(Collectors.toList());
-        displayProducts(sorted);
-    }
+
+    public static void main(String[] args) {
+
+        List<Product> products = new ArrayList<>();public class ECommerceSortingSystem {public class ECommerceSortingSystem {
+
+        products.add(new Product("Laptop", 1200.00, 4.5, 10.0, "Electronics", 89));
+
+        products.add(new Product("Phone", 800.00, 4.8, 15.0, "Electronics", 150));    public static void main(String[] args) {    public static void main(String[] args) {
+
+        products.add(new Product("Tablet", 400.00, 4.2, 20.0, "Electronics", 95));
+
+        products.add(new Product("Watch", 300.00, 4.6, 5.0, "Electronics", 120));        List<Product> products = new ArrayList<>();        List<Product> products = new ArrayList<>();
+
+        
+
+        System.out.println("Original products:");        products.add(new Product("Laptop", 1200.00, 4.5, 10.0, "Electronics", 89));        products.add(new Product("Laptop", 1200.00, 4.5, 10.0, "Electronics", 89));
+
+        products.forEach(System.out::println);
+
+                products.add(new Product("Phone", 800.00, 4.8, 15.0, "Electronics", 150));        products.add(new Product("Phone", 800.00, 4.8, 15.0, "Electronics", 150));
+
+        products.sort((p1, p2) -> Double.compare(p1.getPrice(), p2.getPrice()));
+
+        System.out.println("\nSorted by price:");        products.add(new Product("Tablet", 400.00, 4.2, 20.0, "Electronics", 95));        products.add(new Product("Tablet", 400.00, 4.2, 20.0, "Electronics", 95));
+
+        products.forEach(System.out::println);
+
+                products.add(new Product("Watch", 300.00, 4.6, 5.0, "Electronics", 120));        products.add(new Product("Watch", 300.00, 4.6, 5.0, "Electronics", 120));
+
+        products.sort((p1, p2) -> Double.compare(p2.getRating(), p1.getRating()));
+
+        System.out.println("\nSorted by rating:");                
+
+        products.forEach(System.out::println);
+
+                System.out.println("Original products:");        System.out.println("Original products:");
+
+        products.sort((p1, p2) -> Double.compare(p2.getDiscount(), p1.getDiscount()));
+
+        System.out.println("\nSorted by discount:");        products.forEach(System.out::println);        products.forEach(System.out::println);
+
+        products.forEach(System.out::println);
+
+    }                
+
+}
+        products.sort((p1, p2) -> Double.compare(p1.getPrice(), p2.getPrice()));        products.sort((p1, p2) -> Double.compare(p1.getPrice(), p2.getPrice()));
+
+        System.out.println("\nSorted by price:");        System.out.println("\nSorted by price:");
+
+        products.forEach(System.out::println);        products.forEach(System.out::println);
+
+                
+
+        products.sort((p1, p2) -> Double.compare(p2.getRating(), p1.getRating()));        products.sort((p1, p2) -> Double.compare(p2.getRating(), p1.getRating()));
+
+        System.out.println("\nSorted by rating:");        System.out.println("\nSorted by rating:");
+
+        products.forEach(System.out::println);        products.forEach(System.out::println);
+
+                
+
+        products.sort((p1, p2) -> Double.compare(p2.getDiscount(), p1.getDiscount()));        products.sort((p1, p2) -> Double.compare(p2.getDiscount(), p1.getDiscount()));
+
+        System.out.println("\nSorted by discount:");        System.out.println("\nSorted by discount:");
+
+        products.forEach(System.out::println);        products.forEach(System.out::println);
+
+    }    }
+
+}}
+}
     
     // Sort by sales count - best sellers first
     public void sortBySalesCount() {
