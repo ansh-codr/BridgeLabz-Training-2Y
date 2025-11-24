@@ -23,25 +23,34 @@ public class Control_Interface {
       System.out.println("7 Delete Result");
       System.out.println("8 Exit");
       String choice=sc.nextLine();
-      if(choice.equals("1")){
-        addStudent.AddStudent(sc);
-      }else if(choice.equals("2")){
-        viewAll.ViewStudents();
-      }else if(choice.equals("3")){
-        updateStudent.UpdateStudent(sc);
-      }else if(choice.equals("4")){
-        deleteStudent.DeleteStudent(sc);
-      }else if(choice.equals("5")){
-        addResult.AddResult(sc);
-      }else if(choice.equals("6")){
-        viewResult.ViewResults();
-      }else if(choice.equals("7")){
-        deleteResults.DeleteResult(sc);
-      }else if(choice.equals("8")){
-        run=false;
-        System.out.println("Bye");
-      }else{
-        System.out.println("Wrong choice");
+      switch(choice){
+        case "1":
+          addStudent.AddStudent(sc);
+          break;
+        case "2":
+          viewAll.ViewStudents();
+          break;
+        case "3":
+          updateStudent.UpdateStudent(sc);
+          break;
+        case "4":
+          deleteStudent.DeleteStudent(sc);
+          break;
+        case "5":
+          addResult.AddResult(sc);
+          break;
+        case "6":
+          viewResult.ViewResults();
+          break;
+        case "7":
+          deleteResults.DeleteResult(sc);
+          break;
+        case "8":
+          run=false;
+          System.out.println("Bye");
+          break;
+        default:
+          System.out.println("Wrong choice");
       }
     }
     sc.close();
